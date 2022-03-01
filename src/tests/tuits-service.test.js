@@ -4,18 +4,24 @@ import {
   findTuitById, findTuitByUser
 } from "../services/tuits-service";
 
+import {createUser} from "../services/users-service"
+
 describe('can create tuit with REST API', () => {
-  /**const aliceTuit = {
-    tuit: "this is a test tuit",
-    user: "6209970291a4560bc63f1e0a"
+  const xena = {
+    username = 'xena',
+    password = 'gabrielle',
+    email = 'xena@wp.com'
   };
 
-  test('can insert new tuit with REST API', async () => {
-    const newTuit = await createTuit(aliceTuit);
-    expect(newTuit.tuit).toEqual("this is a test tuit");
-    expect(newTuit.user).toEqual("6209970291a4560bc63f1e0a");
+  test('testing new user insert from tuits service', async () => {
+    // insert new user in the database
+    const newUser = await createUser(xena);
+
+    // verify inserted user's properties match parameter user
+    expect(newUser.username).toEqual(xena.username);
+    expect(newUser.password).toEqual(xena.password);
+    expect(newUser.email).toEqual(xena.email);
   });
-  */
 });
 
 describe('can delete tuit wtih REST API', () => {
