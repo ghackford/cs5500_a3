@@ -8,9 +8,9 @@ import {createUser} from "../services/users-service"
 
 describe('can create tuit with REST API', () => {
   const xena = {
-    username = 'xena',
-    password = 'gabrielle',
-    email = 'xena@wp.com'
+    username: 'xena',
+    password: 'gabrielle',
+    email: 'xena@wp.com'
   };
 
   test('testing new user insert from tuits service', async () => {
