@@ -4,26 +4,21 @@ import {
   findTuitById, findTuitByUser
 } from "../services/tuits-service";
 
-import {createUser} from "../services/users-service"
+import {createUser, deleteUsersByUsername} from "../services/users-service"
 
-describe('can create tuit with REST API', () => {
-  /**const xena = {
-    username: 'xena',
-    password: 'gabrielle',
-    email: 'xena@wp.com'
-  };
-
-  beforeAll(() => {
-    // remove any/all users to make sure we create it in the test
-    return createUser(xena);
-  })
-
-  test('testing new user insert from tuits service', async () => {
-    // insert new user in the database
-    const xenaTuit = "this is xena's tuit";
-    const newTuit = await createTuit(xena._id, xenaTuit);
+describe('createTuit', () => {
+  test('can create tuit with REST API', async () => {
+    const xena = {
+      username: 'xena',
+      password: 'gabrielle',
+      email: 'xena@wp.com'
+    }
+    const newUser = await createUser(xena);
+    const xenaTuit = {
+      tuit: "this is xena's tuit",
+    }
+    const newTuit = await createTuit(newUser._id, xenaTuit);
   });
-  */
 });
 
 describe('can delete tuit wtih REST API', () => {
