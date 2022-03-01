@@ -7,33 +7,15 @@ import {createUser, deleteUsersByUsername} from "../services/users-service";
 
 
 describe('can create tuit with REST API', () => {
-  // create sample user
-  const xena = {
-    username: 'xena',
-    password: 'gabrielle',
-    email: 'xena@wp.com'
-  };
-
-  const xenaTuit = {
+  const aliceTuit = {
     tuit: "this is a test tuit",
-    user: xena
+    user: "6209970291a4560bc63f1e0a"
   };
-
-  beforeAll(() => {
-    // remove any/all users to make sure we create it in the test
-    findTuitByUser(xena)
-    return createUser(xena);
-  })
-
-  afterAll(() => {
-    // remove any data we created
-    return deleteUsersByUsername(xena.username);
-  })
 
   test('can insert new tuit with REST API', async () => {
-    const newTuit = await createTuit(xenaTuit);
+    const newTuit = await createTuit(aliceTuit);
     expect(newTuit.tuit).toEqual("this is a test tuit");
-    expect(newTuit.user).toEqual(xena);
+    expect(newTuit.user).toEqual("6209970291a4560bc63f1e0a");
   });
 });
 
