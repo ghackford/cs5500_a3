@@ -13,14 +13,15 @@ describe('can create tuit with REST API', () => {
     email: 'xena@wp.com'
   };
 
+  beforeAll(() => {
+    // remove any/all users to make sure we create it in the test
+    return createUser(xena);
+  })
+
   test('testing new user insert from tuits service', async () => {
     // insert new user in the database
-    const newUser = await createUser(xena);
-
-    // verify inserted user's properties match parameter user
-    expect(newUser.username).toEqual(xena.username);
-    expect(newUser.password).toEqual(xena.password);
-    expect(newUser.email).toEqual(xena.email);
+    const xenaTuit = "this is xena's tuit";
+    const newTuit = await createTuit(xena._id, xenaTuit);
   });
 });
 
