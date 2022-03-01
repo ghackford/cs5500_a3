@@ -7,7 +7,7 @@ import {
 import {createUser} from "../services/users-service"
 
 describe('can create tuit with REST API', () => {
-  const xena = {
+  /**const xena = {
     username: 'xena',
     password: 'gabrielle',
     email: 'xena@wp.com'
@@ -23,6 +23,7 @@ describe('can create tuit with REST API', () => {
     const xenaTuit = "this is xena's tuit";
     const newTuit = await createTuit(xena._id, xenaTuit);
   });
+  */
 });
 
 describe('can delete tuit wtih REST API', () => {
@@ -32,7 +33,7 @@ describe('can delete tuit wtih REST API', () => {
 describe('can retrieve a tuit by their primary key with REST API', () => {
   // TODO: implement this
   test('can retrieve tuits by user', async () => {
-    const existingTuits = await findTuitByUser("6209970291a4560bc63f1e0a")
+    const existingTuits = await findAllTuits();
   })
 });
 
