@@ -1,6 +1,3 @@
-/*
-*@jest-environment node
-*/
 import axios from "axios";
 
 const TUITS_API = "https://cs5500-a3.herokuapp.com/api/tuits";
