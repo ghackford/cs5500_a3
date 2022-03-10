@@ -20,6 +20,8 @@ test('user list renders static user array', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+// user list renders async test in src/tests/user-list-mock.test.js
+
 test('user list renders mocked', async () => {
   axios.get.mockImplementation(() =>
     Promise.resolve({ data: {users: MOCKED_USERS} }));
