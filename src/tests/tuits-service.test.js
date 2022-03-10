@@ -3,7 +3,7 @@ import {
   findTuitById, findAllTuits
 } from "../services/tuits-service";
 
-import {createUser, findUserById} from "../services/users-service"
+import {findUserById} from "../services/users-service"
 
 const xenaId = "6226a684b667e06e183cd385";
 
